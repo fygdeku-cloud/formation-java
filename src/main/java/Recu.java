@@ -8,5 +8,13 @@
  * @author fygdev
  */
 public class Recu {
+    private Particulier particulier;
+    private Compte compte;
+    private Transaction transaction;
     
+    public Recu(Particulier p, Compte c, Transaction t){
+        this.particulier = p;
+        this.compte = c;
+        this.transaction = t;
+    }
 }
