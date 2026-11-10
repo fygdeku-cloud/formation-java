@@ -51,4 +51,24 @@ public class Particulier {
     public void setAge(int a){
         this.age = a;
     }
+    
+    public String effectuerPaiement(Compte c, Transaction t){
+        
+        if(t.getType() == "depot"){
+            c.setSolde(c.getSolde() + t.getMontant());
+            return "Votre nouveau solde est :"+ c.getSolde() + "XAF";
+        }
+        else if(t.getType() == "retrait"){
+            if(c.getSolde() <= t.getMontant()){
+                return "Solde insuffisant pour effectuer ce retrait";
+            }
+            else{
+                c.setSolde(c.getSolde() - t.getMontant());
+                return "Vous avez effectuer un retrait.Votre nouveau solde est :"+ c.getSolde() + "XAF";
+            }
+        }
+        else{
+            return "Type de transaction non reconnue";
+        }
+    }
 }
