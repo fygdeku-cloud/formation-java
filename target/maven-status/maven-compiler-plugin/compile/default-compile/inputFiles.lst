@@ -2,6 +2,10 @@
 /home/fygdev/NetBeansProjects/TPFinance/src/main/java/Employe.java
 /home/fygdev/NetBeansProjects/TPFinance/src/main/java/Gestionnaire.java
 /home/fygdev/NetBeansProjects/TPFinance/src/main/java/Guichetier.java
+/home/fygdev/NetBeansProjects/TPFinance/src/main/java/Interface/Bienvenue.java
+/home/fygdev/NetBeansProjects/TPFinance/src/main/java/Interface/Inscription.java
+/home/fygdev/NetBeansProjects/TPFinance/src/main/java/Interface/Menu.java
+/home/fygdev/NetBeansProjects/TPFinance/src/main/java/Interface/Transaction.java
 /home/fygdev/NetBeansProjects/TPFinance/src/main/java/Microfinance.java
 /home/fygdev/NetBeansProjects/TPFinance/src/main/java/Particulier.java
 /home/fygdev/NetBeansProjects/TPFinance/src/main/java/Recu.java

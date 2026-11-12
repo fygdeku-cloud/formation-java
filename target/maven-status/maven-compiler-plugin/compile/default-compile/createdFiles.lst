@@ -1,9 +1,13 @@
-Employe.class
+Interface/Inscription.class
 Transaction.class
+Interface/Menu.class
+Interface/Transaction.class
+Particulier.class
+com/tpfinance/tpfinance/TPFinance.class
+Guichetier.class
+Employe.class
 Compte.class
 Microfinance.class
 Recu.class
-Particulier.class
-com/tpfinance/tpfinance/TPFinance.class
 Gestionnaire.class
-Guichetier.class
+Interface/Bienvenue.class
