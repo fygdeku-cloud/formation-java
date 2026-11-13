@@ -4,6 +4,8 @@
  */
 package Interface;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author fygdev
@@ -42,31 +44,38 @@ public class Inscription extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTextField1.setFont(new java.awt.Font("FreeSerif", 1, 36)); // NOI18N
         jTextField1.setText("Creer Un Nouveau Compte");
         jTextField1.addActionListener(this::jTextField1ActionPerformed);
 
+        jLabel1.setFont(new java.awt.Font("FreeSerif", 1, 24)); // NOI18N
         jLabel1.setText("Nom");
 
+        jLabel2.setFont(new java.awt.Font("FreeSerif", 1, 24)); // NOI18N
         jLabel2.setText("Prenom");
 
+        jLabel3.setFont(new java.awt.Font("FreeSerif", 1, 24)); // NOI18N
         jLabel3.setText("Genre");
 
+        jLabel4.setFont(new java.awt.Font("FreeSerif", 1, 24)); // NOI18N
         jLabel4.setText("Age");
 
+        btn_valider.setBackground(new java.awt.Color(0, 0, 255));
+        btn_valider.setFont(new java.awt.Font("FreeSerif", 1, 24)); // NOI18N
+        btn_valider.setForeground(new java.awt.Color(204, 255, 204));
         btn_valider.setText("Valider");
         btn_valider.addActionListener(this::btn_validerActionPerformed);
 
-        age.setText("Votre Age");
         age.addActionListener(this::ageActionPerformed);
 
-        prenom.setText("Entrez Votre Prenom");
         prenom.addActionListener(this::prenomActionPerformed);
 
-        nom.setText("Entrez Votre Nom");
         nom.addActionListener(this::nomActionPerformed);
 
+        g_m.setFont(new java.awt.Font("FreeSerif", 1, 24)); // NOI18N
         g_m.setText("M");
 
+        g_f.setFont(new java.awt.Font("FreeSerif", 1, 24)); // NOI18N
         g_f.setText("F");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -80,29 +89,29 @@ public class Inscription extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel1))
-                                .addGap(24, 24, 24)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel3))
                                 .addGap(36, 36, 36)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(g_m)
                                         .addGap(44, 44, 44)
-                                        .addComponent(g_f))))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(btn_valider)))
+                                        .addComponent(g_f))
+                                    .addComponent(age)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(90, 90, 90)
+                                        .addComponent(btn_valider))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1))
+                                .addGap(24, 24, 24)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(prenom)
+                                    .addComponent(nom))))))
                 .addGap(107, 107, 107))
         );
         layout.setVerticalGroup(
@@ -110,26 +119,26 @@ public class Inscription extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(g_m)
                     .addComponent(g_f))
-                .addGap(26, 26, 26)
+                .addGap(34, 34, 34)
                 .addComponent(btn_valider)
-                .addGap(30, 30, 30))
+                .addGap(22, 22, 22))
         );
 
         pack();
@@ -140,8 +149,32 @@ public class Inscription extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void btn_validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_validerActionPerformed
-        Menu m = new Menu();
-        m.setVisible(true);
+
+        String nomf = nom.getText();
+        String prenomf = prenom.getText();
+        String agef = age.getText();
+        String genref = g_f.getText();
+        String genrem = g_m.getText();
+        
+        if(nomf.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Veuillez renseigner le nom");
+        }
+        else if(prenomf.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Veuillez renseigner le prenom");
+        }
+        else if(agef.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Veuillez renseigner l'age");
+        }
+        else if(genref.isEmpty() && genrem.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Veuillez renseigner votre sexe");
+        }
+        else{
+            
+            System.out.println("Bonjour Monsieur "+nomf+" "+prenomf+"\nAge: "+agef);
+            Menu m = new Menu(String nom);
+            m.setVisible(true);
+            
+        }
     }//GEN-LAST:event_btn_validerActionPerformed
 
     private void prenomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prenomActionPerformed
@@ -191,7 +224,7 @@ public class Inscription extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField nom;
+    public javax.swing.JTextField nom;
     private javax.swing.JTextField prenom;
     // End of variables declaration//GEN-END:variables
 }
