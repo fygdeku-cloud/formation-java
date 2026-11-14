@@ -147,7 +147,9 @@ public class Inscription extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-
+    public String getNomParticulier(){
+        return nom.getText();
+    }
     private void btn_validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_validerActionPerformed
 
         String nomf = nom.getText();
@@ -171,8 +173,8 @@ public class Inscription extends javax.swing.JFrame {
         else{
             
             System.out.println("Bonjour Monsieur "+nomf+" "+prenomf+"\nAge: "+agef);
-            Menu m = new Menu(String nom);
-            m.setVisible(true);
+            Menu men = new Menu();
+            men.setVisible(true);
             
         }
     }//GEN-LAST:event_btn_validerActionPerformed
