@@ -173,10 +173,11 @@ public class Inscription extends javax.swing.JFrame {
         else{
             
             System.out.println("Bonjour Monsieur "+nomf+" "+prenomf+"\nAge: "+agef);
-            Menu men = new Menu();
+            Menu men = new Menu(nomf);
             men.setVisible(true);
-            
+            men.setNomParticulier(nomf);
         }
+                
     }//GEN-LAST:event_btn_validerActionPerformed
 
     private void prenomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prenomActionPerformed

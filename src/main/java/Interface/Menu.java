@@ -15,7 +15,7 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    public Menu(String nom) {
         initComponents();
     }
     
@@ -106,12 +106,21 @@ public class Menu extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    public String getNomParticulier(){
+        return nom_pcl.getText();
+    }
+    
+    public void setNomParticulier(String nom){
+        nom_pcl.setText(nom);
+    }
+    
+    
     public static void main(String args[]) {
         /* Create and display the form */
         Inscription i = new Inscription();
         System.out.println("Nom du particulier : " + i.getNomParticulier());
-        nom_pcl.setText(i.getNomParticulier());
-        java.awt.EventQueue.invokeLater(() -> new Menu().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Menu(i.getNomParticulier()).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
