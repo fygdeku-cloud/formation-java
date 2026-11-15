@@ -30,6 +30,7 @@ public class Inscription extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -39,11 +40,15 @@ public class Inscription extends javax.swing.JFrame {
         age = new javax.swing.JTextField();
         prenom = new javax.swing.JTextField();
         nom = new javax.swing.JTextField();
-        g_m = new javax.swing.JCheckBox();
-        g_f = new javax.swing.JCheckBox();
+        g_f = new javax.swing.JRadioButton();
+        g_m = new javax.swing.JRadioButton();
+
+        jCheckBoxMenuItem1.setSelected(true);
+        jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("FreeSerif", 1, 36)); // NOI18N
         jTextField1.setText("Creer Un Nouveau Compte");
         jTextField1.addActionListener(this::jTextField1ActionPerformed);
@@ -66,17 +71,20 @@ public class Inscription extends javax.swing.JFrame {
         btn_valider.setText("Valider");
         btn_valider.addActionListener(this::btn_validerActionPerformed);
 
+        age.setFont(new java.awt.Font("FreeSerif", 1, 18)); // NOI18N
         age.addActionListener(this::ageActionPerformed);
 
+        prenom.setFont(new java.awt.Font("FreeSerif", 1, 18)); // NOI18N
         prenom.addActionListener(this::prenomActionPerformed);
 
+        nom.setFont(new java.awt.Font("FreeSerif", 1, 18)); // NOI18N
         nom.addActionListener(this::nomActionPerformed);
 
-        g_m.setFont(new java.awt.Font("FreeSerif", 1, 24)); // NOI18N
-        g_m.setText("M");
-
-        g_f.setFont(new java.awt.Font("FreeSerif", 1, 24)); // NOI18N
+        g_f.setFont(new java.awt.Font("FreeSerif", 1, 18)); // NOI18N
         g_f.setText("F");
+
+        g_m.setFont(new java.awt.Font("FreeSerif", 1, 18)); // NOI18N
+        g_m.setText("M");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,15 +103,16 @@ public class Inscription extends javax.swing.JFrame {
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel3))
                                 .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(g_m)
-                                        .addGap(44, 44, 44)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(g_f))
-                                    .addComponent(age)
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addComponent(age, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGap(90, 90, 90)
-                                        .addComponent(btn_valider))))
+                                        .addComponent(btn_valider)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel2)
@@ -119,7 +128,7 @@ public class Inscription extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -131,12 +140,12 @@ public class Inscription extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(g_m)
-                    .addComponent(g_f))
-                .addGap(34, 34, 34)
+                    .addComponent(g_f)
+                    .addComponent(g_m))
+                .addGap(36, 36, 36)
                 .addComponent(btn_valider)
                 .addGap(22, 22, 22))
         );
@@ -147,35 +156,45 @@ public class Inscription extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
-    public String getNomParticulier(){
-        return nom.getText();
-    }
+
     private void btn_validerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_validerActionPerformed
 
         String nomf = nom.getText();
         String prenomf = prenom.getText();
         String agef = age.getText();
-        String genref = g_f.getText();
-        String genrem = g_m.getText();
+
         
         if(nomf.isEmpty()){
             JOptionPane.showMessageDialog(this, "Veuillez renseigner le nom");
         }
+        
         else if(prenomf.isEmpty()){
             JOptionPane.showMessageDialog(this, "Veuillez renseigner le prenom");
         }
+        
         else if(agef.isEmpty()){
             JOptionPane.showMessageDialog(this, "Veuillez renseigner l'age");
         }
-        else if(genref.isEmpty() && genrem.isEmpty()) {
+        
+        else if(!g_f.isSelected() && !g_m.isSelected()) {
             JOptionPane.showMessageDialog(this, "Veuillez renseigner votre sexe");
         }
+        
         else{
             
-            System.out.println("Bonjour Monsieur "+nomf+" "+prenomf+"\nAge: "+agef);
-            Menu men = new Menu(nomf);
+            Menu men = new Menu();
             men.setVisible(true);
             men.setNomParticulier(nomf);
+            
+            setVisible(false);
+            
+            if(g_m.isSelected()){
+                System.out.println("Bonjour Monsieur "+nomf+" "+prenomf+"\nAge: "+agef);
+                men.setGenreParticulier("Monsieur");
+            }else{
+                System.out.println("Bonjour Madame "+nomf+" "+prenomf+"\nAge: "+agef);
+                men.setGenreParticulier("Madame");
+            }
         }
                 
     }//GEN-LAST:event_btn_validerActionPerformed
@@ -220,8 +239,9 @@ public class Inscription extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField age;
     private javax.swing.JButton btn_valider;
-    private javax.swing.JCheckBox g_f;
-    private javax.swing.JCheckBox g_m;
+    private javax.swing.JRadioButton g_f;
+    private javax.swing.JRadioButton g_m;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

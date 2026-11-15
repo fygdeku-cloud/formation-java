@@ -30,38 +30,55 @@ public class Bienvenue extends javax.swing.JFrame {
 
         titre_bvn = new javax.swing.JLabel();
         btn_creercompte = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 255, 255));
 
         titre_bvn.setBackground(new java.awt.Color(0, 0, 204));
-        titre_bvn.setFont(new java.awt.Font("Arial Black", 1, 23)); // NOI18N
-        titre_bvn.setText("Welcome");
+        titre_bvn.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        titre_bvn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titre_bvn.setText("Bienvenue");
 
         btn_creercompte.setBackground(new java.awt.Color(0, 0, 204));
-        btn_creercompte.setFont(new java.awt.Font("Linux Biolinum O", 1, 25)); // NOI18N
-        btn_creercompte.setText("Sign In");
+        btn_creercompte.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        btn_creercompte.setText("Creer Un Compte");
+        btn_creercompte.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        btn_creercompte.setOpaque(true);
         btn_creercompte.addActionListener(this::btn_creercompteActionPerformed);
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Gerer vos transactions siplement");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(157, 157, 157)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(150, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_creercompte)
-                    .addComponent(titre_bvn))
-                .addContainerGap(124, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(titre_bvn)
+                        .addGap(153, 153, 153))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btn_creercompte)
+                                .addGap(33, 33, 33)))
+                        .addGap(106, 106, 106))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(titre_bvn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
                 .addComponent(btn_creercompte)
-                .addGap(88, 88, 88))
+                .addGap(89, 89, 89))
         );
 
         pack();
@@ -70,6 +87,8 @@ public class Bienvenue extends javax.swing.JFrame {
     private void btn_creercompteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_creercompteActionPerformed
         Inscription i = new Inscription();
         i.setVisible(true);
+        
+        setVisible(false);
     }//GEN-LAST:event_btn_creercompteActionPerformed
 
     /**
@@ -99,6 +118,7 @@ public class Bienvenue extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_creercompte;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel titre_bvn;
     // End of variables declaration//GEN-END:variables
 }

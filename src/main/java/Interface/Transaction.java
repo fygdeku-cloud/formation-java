@@ -41,10 +41,6 @@ public class Transaction extends javax.swing.JFrame {
 
         jLabel3.setText("Montant");
 
-        montant.setText("Entrez Montant");
-
-        num_compte.setText("Entrez Numero de Compte");
-
         retrait.setText("Retrait");
 
         depot.setText("Depot");
@@ -63,17 +59,14 @@ public class Transaction extends javax.swing.JFrame {
                             .addGap(6, 6, 6)
                             .addComponent(jLabel2))
                         .addComponent(jLabel3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(montant)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(num_compte)
-                            .addComponent(montant))
-                        .addContainerGap(66, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(retrait)
-                        .addGap(106, 106, 106))))
+                        .addGap(0, 77, Short.MAX_VALUE)
+                        .addComponent(retrait))
+                    .addComponent(num_compte))
+                .addGap(106, 106, 106))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

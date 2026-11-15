@@ -35,21 +35,16 @@
                       <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="num_compte" max="32767" attributes="0"/>
-                          <Component id="montant" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="66" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="montant" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="77" max="32767" attributes="0"/>
                       <Component id="retrait" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="num_compte" alignment="0" max="32767" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -88,14 +83,8 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="montant">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Entrez Montant"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="num_compte">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Entrez Numero de Compte"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="retrait">
       <Properties>

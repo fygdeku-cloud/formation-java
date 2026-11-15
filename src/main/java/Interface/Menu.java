@@ -15,7 +15,7 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      */
-    public Menu(String nom) {
+    public Menu() {
         initComponents();
     }
     
@@ -35,6 +35,8 @@ public class Menu extends javax.swing.JFrame {
         btn_demannul = new javax.swing.JButton();
         btn_consultrecu = new javax.swing.JButton();
         nom_pcl = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        genre = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,37 +52,53 @@ public class Menu extends javax.swing.JFrame {
         btn_consultrecu.setText("4-Consulter mes recus");
         btn_consultrecu.addActionListener(this::btn_consultrecuActionPerformed);
 
+        nom_pcl.setFont(new java.awt.Font("FreeSerif", 1, 18)); // NOI18N
         nom_pcl.setText("jLabel2");
         nom_pcl.setEnabled(false);
+
+        jLabel2.setFont(new java.awt.Font("FreeSerif", 1, 24)); // NOI18N
+        jLabel2.setText("Bonjour ");
+
+        genre.setFont(new java.awt.Font("FreeSerif", 1, 18)); // NOI18N
+        genre.setText("jLabel3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(84, 84, 84)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(genre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nom_pcl)
+                .addGap(126, 126, 126))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(94, 94, 94)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nom_pcl, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(btn_effectuerpaiement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_demannul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_infoscompte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btn_consultrecu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(93, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_effectuerpaiement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_demannul, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_infoscompte, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_consultrecu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addComponent(nom_pcl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
-                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nom_pcl)
+                    .addComponent(jLabel2)
+                    .addComponent(genre))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23)
                 .addComponent(btn_effectuerpaiement)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(btn_demannul)
@@ -101,26 +119,26 @@ public class Menu extends javax.swing.JFrame {
     private void btn_effectuerpaiementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_effectuerpaiementActionPerformed
         Transaction t = new Transaction();
         t.setVisible(true);
+        
+        setVisible(false);
     }//GEN-LAST:event_btn_effectuerpaiementActionPerformed
 
     /**
      * @param args the command line arguments
      */
     
-    public String getNomParticulier(){
-        return nom_pcl.getText();
-    }
-    
     public void setNomParticulier(String nom){
         nom_pcl.setText(nom);
+    }
+    
+    public void setGenreParticulier(String g){
+        genre.setText(g);
     }
     
     
     public static void main(String args[]) {
         /* Create and display the form */
-        Inscription i = new Inscription();
-        System.out.println("Nom du particulier : " + i.getNomParticulier());
-        java.awt.EventQueue.invokeLater(() -> new Menu(i.getNomParticulier()).setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new Menu().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -128,7 +146,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton btn_demannul;
     private javax.swing.JButton btn_effectuerpaiement;
     private javax.swing.JButton btn_infoscompte;
+    private javax.swing.JLabel genre;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private static javax.swing.JLabel nom_pcl;
     // End of variables declaration//GEN-END:variables
 }
